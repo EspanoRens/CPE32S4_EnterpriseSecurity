@@ -1,0 +1,10 @@
+---
+ - name: Collecting Logs 
+   hosts: controller
+   tasks:
+     - name: Collect log files
+       fetch: 
+         src: /var/log/syslog
+         dest: /home/espano/
+         flat: yes
+       register: syslog_result
